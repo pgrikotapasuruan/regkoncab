@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Persatuan_Guru_Republik_Indonesia.png" />
-    <title>Konferensi_Cabang</title>
-    <style>
-        /* CSS untuk memastikan iframe mengisi seluruh viewport tanpa scrollbar tambahan dari halaman embed */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden; /* Mencegah scrollbar pada body halaman embed */
-        }
-        iframe {
-            display: block; /* Menghilangkan spasi ekstra di bawah iframe inline */
-            border: none; /* Sudah ada di inline style, tapi baik untuk ditekankan */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/2/2a/Persatuan_Guru_Republik_Indonesia.png" />
+    <title>Konferensi Cabang</title>
+    <style>
+        /* CSS untuk memastikan iframe mengisi seluruh viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Mencegah scrollbar pada halaman utama */
+        }
+        
+        iframe {
+            display: block; /* Menghilangkan spasi ekstra di bawah iframe */
+            border: none; /* Menghilangkan border iframe */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <iframe  
-        id="appFrame"
-        src="https://script.google.com/macros/s/AKfycbxT5cUYXSabyYlhINbjgLAwBi3wNZ3pXPjcXgndfcWiHLWEtONT47jtGMfd4TqZqEgj/exec"
-        width="100%"
-        height="100%"
-        allowfullscreen="true"
-        allow="camera" 
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
-        Browser Anda tidak mendukung iframe.
-    </iframe>
+    <iframe  
+        id="appFrame"
+        src="https://script.google.com/macros/s/AKfycbxT5cUYXSabyYlhINbjgLAwBi3wNZ3pXPjcXgndfcWiHLWEtONT47jtGMfd4TqZqEgj/exec"
+        allowfullscreen="true"
+        allow="camera">
+        Browser Anda tidak mendukung iframe.
+    </iframe>
 
-    <script>
-        // Fungsi untuk mencoba masuk mode fullscreen
-        // Perlu diingat bahwa requestFullscreen() biasanya memerlukan interaksi pengguna
-        // dan mungkin tidak selalu berhasil secara otomatis saat halaman dimuat.
-        // window.onload = function() {
-        //     const iframe = document.getElementById('appFrame');
-        //     if (iframe && iframe.requestFullscreen) {
-        //         iframe.requestFullscreen()
-        //             .then(() => console.log('Fullscreen mode activated for iframe.'))
-        //             .catch((err) => {
-        //                 console.error('Error attempting to enable full-screen mode for iframe:', err.message, err.name);
-        //                 // Mungkin perlu tombol manual untuk fullscreen jika otomatis gagal
-        //             });
-        //     } else if (iframe && iframe.webkitRequestFullscreen) { // Safari
-        //         iframe.webkitRequestFullscreen();
-        //     } else if (iframe && iframe.msRequestFullscreen) { // IE11
-        //         iframe.msRequestFullscreen();
-        //     }
-        // };
-
-        // Catatan: Script fullscreen di atas mungkin tidak berjalan otomatis di banyak browser modern
-        // karena pembatasan keamanan. Anda mungkin perlu memicu fullscreen dari interaksi pengguna (misalnya, klik tombol).
-        // Untuk tujuan responsivitas dasar, viewport meta tag dan CSS sudah cukup.
-    </script>
+    <script>
+        // Catatan: Script fullscreen di bawah ini memerlukan interaksi pengguna (misalnya, klik tombol)
+        // untuk berjalan di browser modern karena kebijakan keamanan.
+        // Membiarkannya sebagai komentar adalah pilihan yang aman jika tidak ada tombol pemicu.
+        
+        /*
+        function goFullScreen() {
+            const iframe = document.getElementById('appFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { // Safari
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE11
+                iframe.msRequestFullscreen();
+            }
+        }
+        
+        // Contoh cara memanggilnya dengan tombol:
+        // <button onclick="goFullScreen()">Go Fullscreen</button>
+        */
+    </script>
 </body>
 </html>
